@@ -1,0 +1,232 @@
+html{
+    display: flex;
+    justify-content: center;
+}
+body{
+    /* max-width: 1188px; */
+    margin: 0px;
+}
+*{
+    font-family:'Inter', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.banner{
+    width: 100vw;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #171321;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+}
+.taskbar{
+    /* position: fixed; */
+    display: flex;
+    margin: 0px;
+    padding: 0px 30px 0px 30px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 84px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 1600px;
+    background: linear-gradient(to left bottom,#DFB0CE,rgba(255, 255, 255, 0.5));
+    border: 1px solid black;
+}
+.container{
+    display: flex;
+    width: max-content;
+    height: 64px;
+    padding: 0px;
+    margin: 0px;
+    align-items: center;
+    gap:20px;
+}
+.container1{
+    display: flex;
+    width: 100vw;
+    height: 715.55px;
+    padding: 64px 96px 64px 96px;
+    margin: 0px;
+    /* background-color: rgba(255, 255, 255, 0.5)+rgba(105, 36, 91, 0.5); */
+    /* background: linear-gradient(to right,rgba(255, 255, 255, 0.5),#DFB0CE); */
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.container1-item{
+    display: flex;
+    padding: 24px;
+    width: 460px;
+    height: 555.55px;
+    flex-direction: column;
+    color: black;
+    border: 1px solid black;
+    gap: 20px;
+}
+.container2{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 746px;
+    /* background: linear-gradient(to right,rgba(255, 255, 255, 0.5),#DFB0CE); */
+    justify-content: center;
+    align-items: center;
+    gap:0px;
+}
+.container2-logo{
+    width: 100vw;
+    height: 68px;
+    margin-bottom: 47.25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.container2-intro{
+    width: 100vw;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.container2-intro-item{
+    width: 600px;
+    height: 450px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.container3{
+    width: 100vw;
+    height: 140px;
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* background-color:linear-gradient(to right,rgba(255, 255, 255, 0.5),#DFB0CE); */
+}
+.container3-item{
+    width: 260px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container3-item-icon{
+    width: 32px;
+    height: 32px;
+}
+.container4{
+    width: 100vw;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.container4-item-first{
+    width: 550px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f6f3fe;
+    justify-content: center;
+}
+.container4-item{
+    width: 550px;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f6f3fe;
+    justify-content: center;
+}
+.container4-item-icon{
+    width: 30px;
+    height: 30px;
+}
+.container4-item-showcase__pill{
+    width: 400px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 90px;
+    padding: 8px ;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.container-button{
+    width: max-content;
+    height: 44px;
+    color: white;
+    background-color: black;
+    padding: 11px 16px 0px 16px;
+    margin: 10px;
+}
+.container-button2{
+    width: max-content;
+    color: white;
+    background-color: #7759c2;
+    line-height: 20px;
+    border: 1px solid #7759c2;
+    border-radius: 90px;
+    padding: 4px 12px 4px 8px;
+}
+.font600{
+    font-weight: 600;
+}
+.font400{
+    font-weight: 400;
+}
+.size14{
+    font-size: 14px;
+}
+.size16{
+    font-size: 16px;
+}
+.size18{
+    font-size: 18px;
+}
+.size20{
+    font-size: 20px;
+}
+.size24{
+    font-size: 24px;
+}
+.size40{
+    font-size: 40px;
+}
+.size50{
+    font-size: 50px;
+}
+.opacity{
+    opacity: 0.5;
+}
+.backgroundcolor{
+    background-color: rgba(244,243,246,0.25);
+}
+.black{
+    color: black;
+}
+span{
+    padding: 0px;
+    margin: 0px;
+    margin-left: 20px;
+}
