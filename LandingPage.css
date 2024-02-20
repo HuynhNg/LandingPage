@@ -2,166 +2,298 @@ html{
     display: flex;
     justify-content: center;
 }
-body{
-    /* max-width: 1188px; */
-    margin: 0px;
-}
 *{
     font-family:'Inter', sans-serif;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
+.box{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .banner{
     width: 100vw;
-    height: 52px;
+    padding: 20px 0px 20px 0px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background-color: #171321;
     color: white;
-    margin: 0px;
-    padding: 0px;
+    gap: 24px;
+    padding: 12px;
+}
+.banner_image{
+    width: 60px;
+    height: 34px;
+}
+.banner_title{
+    width: max-content;
+    font-size: 16px;
+    font-weight: 600;
+}
+.banner_link{
+    color: white;
+    width: max-content;
+}
+@media (max-width: 945px) {
+    .banner_image{
+        display: none;
+    }  
+}
+@media (max-width: 835px) {
+    .banner{
+        background-color: #eee7fd;
+        flex-direction: column;
+        padding: 16px;
+        align-items:flex-start;
+        gap: 0px;
+    }
+    .banner_title{
+        color: #171321;
+        margin: 0px;
+    }
+    .banner_link{
+        color: #7759c2;
+    }
+
 }
 .taskbar{
-    /* position: fixed; */
-    display: flex;
-    margin: 0px;
-    padding: 0px 30px 0px 30px;
-    justify-content: space-between;
-    align-items: center;
     width: 100vw;
-    height: 84px;
-}
-.box{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 1600px;
-    background: linear-gradient(to left bottom,#DFB0CE,rgba(255, 255, 255, 0.5));
+    padding: 4px 24px 16px 24px;
+    position: fixed;
+    background-color: white;
     border: 1px solid black;
+    z-index: 3;
 }
-.container{
+.taskbar_item{
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+}
+.taskbar_item_left{
     width: max-content;
     height: 64px;
-    padding: 0px;
-    margin: 0px;
-    align-items: center;
-    gap:20px;
-}
-.container1{
     display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.taskbar_item_left_dropdown{
+    display: flex;
+    gap: 20px;
+    color: black;
+}
+.taskbar_item_right{
+    width: max-content;
+    display: flex;
+    height: 64px;
+    gap: 20px;
+    align-items: center;
+    color: black;
+}
+.taskbar_mobile_right{
+    display: none;
+}
+.taskbar_phone{
+    display: none;
+}
+.taskbar_phone_item1{
+    display: none;
+}
+.taskbar_phone_item2{
+    display: none;
+}
+@media (max-width: 1025px) and (min-width:577px) {
+    .taskbar_item_left_dropdown{
+        display: none;
+    }
+    .taskbar_item_right{
+        display: none;
+    }
+    .taskbar_mobile_right{
+        width: max-content;
+        display: flex;
+        height: 64px;
+        gap: 20px;
+        align-items: center;
+        color: black;
+    }
+}
+@media (max-width: 576px) {
+    .taskbar_item{
+        display: none;
+    }
+    .taskbar{
+        padding: 0px;
+    }
+    .taskbar_phone{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100vw;
+        padding: 0px;
+
+    }
+    .taskbar_phone_item1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 11px 16px 11px;
+        background-color: black;
+        color: white;
+    }
+    .taskbar_phone_item2{
+        width: 100%;
+        display: flex;
+        padding: 16px;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid;
+    }
+}
+.container{
+    margin-top: 80px;
     width: 100vw;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-image: url("https://about.gitlab.com/nuxt-images/home/gradient.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.scroll_gallery{
+    display:none;
+    width: 100%;
     height: 715.55px;
     padding: 64px 96px 64px 96px;
-    margin: 0px;
-    /* background-color: rgba(255, 255, 255, 0.5)+rgba(105, 36, 91, 0.5); */
-    /* background: linear-gradient(to right,rgba(255, 255, 255, 0.5),#DFB0CE); */
     justify-content: center;
     align-items: center;
     gap:20px;
+    border: 1px solid black;
+    
 }
-.container1-item{
+.scroll_gallery_item{
     display: flex;
     padding: 24px;
     width: 460px;
-    height: 555.55px;
+    height: 100%;
     flex-direction: column;
     color: black;
     border: 1px solid black;
     gap: 20px;
 }
-.container2{
+.logo_container{
+    max-width: 1170px;
+    display: flex;
+    padding: 24px 55px 0px 55px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 112px;
+}
+.logo_trustby{
+    font-weight: 400;
+    font-size: 16;
+}
+@media (min-width:768px) {
+    .logo_container{
+        margin-bottom: 96px;
+    }
+}
+@media (max-width:768px) {
+    .logo_container{
+        margin: 48px 0px 64px 0px;
+        flex-wrap: wrap;
+    }
+    .logo_trustby{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+}
+.intro{
+    max-width: 1170px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.intro_item{
+    width: 50%;
+    padding-left: 96px;
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 746px;
-    /* background: linear-gradient(to right,rgba(255, 255, 255, 0.5),#DFB0CE); */
-    justify-content: center;
-    align-items: center;
-    gap:0px;
+    gap: 20px;
 }
-.container2-logo{
-    width: 100vw;
-    height: 68px;
-    margin-bottom: 47.25px;
+@media (max-width:768px) {
+    .intro_item{
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+.blurb{
+    width: 100%;
+    max-width: 1170px;
+    margin-top: 64px;
+    margin-bottom: 160px;
+    padding-left: 16px;
+    padding-right: 16px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 30px;
+    /* flex-wrap: wrap; */
+    gap: 32px;
 }
-.container2-intro{
-    width: 100vw;
-    height: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-.container2-intro-item{
-    width: 600px;
-    height: 450px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
-}
-.container3{
-    width: 100vw;
-    height: 140px;
-    margin-bottom: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    /* background-color:linear-gradient(to right,rgba(255, 255, 255, 0.5),#DFB0CE); */
-}
-.container3-item{
-    width: 260px;
+.blurb_item{
+    max-width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.container3-item-icon{
+.icon{
     width: 32px;
     height: 32px;
 }
-.container4{
-    width: 100vw;
-    height: 350px;
+@media (max-width:768px) {
+    .blurb{
+        flex-wrap: wrap;
+    }
+    
+}
+.feature_showcare{
+    max-width: 1170px;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
+    position: relative;
 }
-.container4-item-first{
-    width: 550px;
-    height: 100%;
+.feature_showcare::before{
+    background: #171321;
+    bottom: -1px;
+    content: "";
+    display: block;
+    z-index: 1;
+    height: calc(100% - 100px);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+}
+.feature_showcare_item{
+    width: 45%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    background-color: #f6f3fe;
-    justify-content: center;
+    gap: 20px;
+    z-index: 2;
 }
-.container4-item{
-    width: 550px;
-    height: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #f6f3fe;
-    justify-content: center;
-}
-.container4-item-icon{
-    width: 30px;
-    height: 30px;
-}
-.container4-item-showcase__pill{
+.feature_showcare_item_pill{
     width: 400px;
     height: 40px;
     background-color: white;
@@ -172,22 +304,25 @@ body{
     align-items: center;
     gap: 10px;
 }
-.container-button{
-    width: max-content;
-    height: 44px;
-    color: white;
-    background-color: black;
-    padding: 11px 16px 0px 16px;
-    margin: 10px;
+.feature_showcare_card{
+    padding: 32px;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f6f3fe;
+    justify-content: center;
 }
-.container-button2{
-    width: max-content;
-    color: white;
-    background-color: #7759c2;
-    line-height: 20px;
-    border: 1px solid #7759c2;
-    border-radius: 90px;
-    padding: 4px 12px 4px 8px;
+@media (min-width:768px) {
+    .feature_showcare::before{
+        height: 120px;
+    }    
+}
+@media (max-width:768px) {
+    .feature_showcare_item{
+        width: 100%;
+    }
 }
 .font600{
     font-weight: 600;
@@ -219,14 +354,12 @@ body{
 .opacity{
     opacity: 0.5;
 }
-.backgroundcolor{
-    background-color: rgba(244,243,246,0.25);
-}
-.black{
-    color: black;
-}
-span{
-    padding: 0px;
-    margin: 0px;
-    margin-left: 20px;
+.button{
+    width: max-content;
+    height: 44px;
+    color: white;
+    background-color: black;
+    padding: 11px 16px 0px 16px;
+    margin: 10px;
+    border-radius: 4px;
 }
