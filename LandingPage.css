@@ -11,9 +11,10 @@ html{
 .box{
     width: 100%;
     display: flex;
-    gap: 20px;
+    gap:24px;
     align-items: center;
     flex-wrap: wrap;
+
 }
 .banner{
     width: 100vw;
@@ -24,9 +25,8 @@ html{
     background-color: #171321;
     color: white;
     gap: 24px;
-    padding: 12px;
 }
-.banner_image{
+.banner_img{
     width: 60px;
     height: 34px;
 }
@@ -38,11 +38,25 @@ html{
 .banner_link{
     color: white;
     width: max-content;
+    display: flex;
+    gap: 0px;
+    transition: all 1s;
+}
+.banner_link_color{
+    color: white;
+}
+.banner_link_icon{
+    width: max-content;
 }
 @media (max-width: 945px) {
-    .banner_image{
+    .banner_img{
         display: none;
     }  
+}
+@media (min-width:835px) {
+    .banner{
+        height: 52px;
+    }
 }
 @media (max-width: 835px) {
     .banner{
@@ -56,18 +70,26 @@ html{
         color: #171321;
         margin: 0px;
     }
-    .banner_link{
+    .banner_link_color{
         color: #7759c2;
     }
-
+    .banner_link_icon{
+        display: none;
+    }
+}
+.banner_link:hover .banner_link_icon{
+    transition-duration: 0.5s;
+    transform: translate(10px);
 }
 .taskbar{
     width: 100vw;
+    min-height: 84px;
     padding: 4px 24px 16px 24px;
-    position: fixed;
+    position: sticky;
     background-color: white;
-    border: 1px solid black;
-    z-index: 3;
+    /* border: 1px solid black; */
+    top: 0px;
+    z-index: 1000;
 }
 .taskbar_item{
     width: 100%;
@@ -94,16 +116,16 @@ html{
     align-items: center;
     color: black;
 }
-.taskbar_mobile_right{
+.taskbar_tablet_right{
     display: none;
 }
-.taskbar_phone{
+.taskbar_mobile{
     display: none;
 }
-.taskbar_phone_item1{
+.taskbar_mobile_item1{
     display: none;
 }
-.taskbar_phone_item2{
+.taskbar_mobile_item2{
     display: none;
 }
 @media (max-width: 1025px) and (min-width:577px) {
@@ -113,7 +135,7 @@ html{
     .taskbar_item_right{
         display: none;
     }
-    .taskbar_mobile_right{
+    .taskbar_tablet_right{
         width: max-content;
         display: flex;
         height: 64px;
@@ -129,7 +151,7 @@ html{
     .taskbar{
         padding: 0px;
     }
-    .taskbar_phone{
+    .taskbar_mobile{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -137,7 +159,7 @@ html{
         padding: 0px;
 
     }
-    .taskbar_phone_item1{
+    .taskbar_mobile_item1{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -145,7 +167,7 @@ html{
         background-color: black;
         color: white;
     }
-    .taskbar_phone_item2{
+    .taskbar_mobile_item2{
         width: 100%;
         display: flex;
         padding: 16px;
@@ -155,10 +177,7 @@ html{
     }
 }
 .container{
-    margin-top: 80px;
     width: 100vw;
-    padding-left: 16px;
-    padding-right: 16px;
     background-image: url("https://about.gitlab.com/nuxt-images/home/gradient.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -167,34 +186,106 @@ html{
     align-items: center;
     justify-content: center;
 }
-.scroll_gallery{
-    display:none;
-    width: 100%;
-    height: 715.55px;
-    padding: 64px 96px 64px 96px;
-    justify-content: center;
-    align-items: center;
-    gap:20px;
-    border: 1px solid black;
-    
+.slide_container{
+    width: 100vw;
+    flex-wrap: wrap;
 }
-.scroll_gallery_item{
+.slider{
     display: flex;
-    padding: 24px;
+    justify-content: center;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.slides{
+    padding: 64px 96px 64px 96px;
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+    scroll-behavior: smooth;
+    gap:40px;
+}
+.slides::-webkit-scrollbar{
+    display: none;
+}
+.slide_item{
+    display:flex;
     width: 460px;
-    height: 100%;
     flex-direction: column;
     color: black;
-    border: 1px solid black;
     gap: 20px;
+    /* overflow-wrap: none; */
 }
-.logo_container{
-    max-width: 1170px;
+.slide_item_card{
+    background: linear-gradient(176deg,hsla(0,0%,100%,.75),hsla(0,0%,100%,.4));
     display: flex;
-    padding: 24px 55px 0px 55px;
+    flex-wrap: wrap;
+    width: 460px;
+    height: 530px;
+    padding: 24px;
+    line-height: 24px;
+    scroll-snap-align: center;
+}
+.card_img{
+    height: 260px;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 40px;
+}
+.card_link{
+    display: flex;
+    margin-top:auto;
+}
+.block{
+    display: block;
+    width: 460px;
+    height: 40px;
+}
+.silde_block_container{
+    display: none;
+    width: 100%;
+    background-color: transparent;
+    color: black;
+}
+.slide_block{
+    padding-left: 16px;
+    padding-right: 16px;
+    display: none;
+    margin-top: 64px;
+}
+@media (max-width:1025px) {
+    .slides{
+        padding: 32px 32px 64px 32px
+        
+    }
+}
+@media (max-width:640px) {
+    .slide_block{
+        display: block;
+    }
+    #slide_1{
+        display: none;
+    }
+    #slide_2{
+        display: none;
+    }
+}
+.logo{
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding: auto;
+}
+.logo_container{
+    max-width: 1024px;
+    display: flex;
+    /* padding: 24px 55px 0px 55px; */
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
     margin-bottom: 112px;
 }
 .logo_trustby{
@@ -218,7 +309,15 @@ html{
     }
 }
 .intro{
-    max-width: 1170px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.intro_container{
+    max-width: 1024px;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -226,10 +325,26 @@ html{
 }
 .intro_item{
     width: 50%;
-    padding-left: 96px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.intro_block{
+    width: 100%;
+    display: flex;
+    gap:24px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.intro_button{
+    width: 100%;
+    height: 44px;
+    color: white;
+    background-color: black;
+    padding: 11px 16px 0px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid black;
 }
 @media (max-width:768px) {
     .intro_item{
@@ -237,10 +352,21 @@ html{
         padding-left: 16px;
         padding-right: 16px;
     }
+} 
+@media (max-width:576px) {
+    .intro_block{
+        flex-direction: column;
+    }
+    .intro_button{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
 }
 .blurb{
     width: 100%;
-    max-width: 1170px;
+    max-width: 1024px;
     margin-top: 64px;
     margin-bottom: 160px;
     padding-left: 16px;
@@ -257,10 +383,6 @@ html{
     flex-direction: column;
     gap: 10px;
 }
-.icon{
-    width: 32px;
-    height: 32px;
-}
 @media (max-width:768px) {
     .blurb{
         flex-wrap: wrap;
@@ -268,18 +390,19 @@ html{
     
 }
 .feature_showcare{
-    max-width: 1170px;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    max-width: 1024px;
+    margin: 0px 16px 0px 16px;
     position: relative;
+    gap: 20px;
 }
 .feature_showcare::before{
     background: #171321;
     bottom: -1px;
     content: "";
     display: block;
-    z-index: 1;
+    z-index: 0;
     height: calc(100% - 100px);
     position: absolute;
     left: 50%;
@@ -287,14 +410,14 @@ html{
     width: 100vw;
 }
 .feature_showcare_item{
-    width: 45%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;
     z-index: 2;
 }
 .feature_showcare_item_pill{
-    width: 400px;
+    width: 100%;
     height: 40px;
     background-color: white;
     border: 1px solid black;
@@ -314,15 +437,271 @@ html{
     background-color: #f6f3fe;
     justify-content: center;
 }
+#feature_item1{
+    border-radius: 8px 0px 8px 0px;
+}
+#feature_item2{
+    border-radius: 0px 8px 0px 0px;
+}
+#feature_item3{
+    border-radius: 0 0 90px 0;
+}
 @media (min-width:768px) {
     .feature_showcare::before{
         height: 120px;
-    }    
+    }
 }
-@media (max-width:768px) {
+@media (max-width:767px) {
+    .feature_showcare{
+        flex-wrap: wrap;
+    }
     .feature_showcare_item{
+        margin-left: 16px;
+        margin-right: 16px;
         width: 100%;
     }
+    #feature_item1{
+        border-radius: 8px 8px 0px 0px;
+    }
+    #feature_item2{
+        border-radius: 0px 0px 0px 0px;
+    }
+    #feature_item3{
+        border-radius: 0 0 90px 8px;
+    }
+}
+.tabbed_features{
+    padding: 96px 0 64px;
+    background-color:#171321 ;
+    width: 100vw;
+}
+.tabbed_features_container{
+    width: 100%;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: white;
+}
+.tabbed_features_header{
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(91.08deg,#feb484 1.97%,#a686f2 27.88%,#592ac8 65.98%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    max-width: 480px;
+    font-weight: 600;
+    font-size: 32px;
+    padding-bottom: 32px;
+}
+.tabbed_features_text_header{
+    max-width: 800px;
+    font-weight: 600;
+    font-size: 50px;
+    letter-spacing: -1.4px;
+    line-height: 60px;
+}
+.tabbed_features_text_header_1{
+    display: none;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #a989f5;
+}
+.tabbed_features_tabs{
+    padding: 64px 0px 64px 0px;
+    display: flex;
+    gap: 24px;
+    color: white;
+}
+.tabbed_features_button{
+    background-color: #45424d;
+    color: white;
+    border: 1px solid #45424d;
+    width: max-content;
+    height: max-content;
+    padding: 8px 24px 8px 24px;
+    border-radius: 90px;
+}
+.tabbed_features_content{
+    padding-top: 16px;
+    display: flex;
+    gap: 32px;
+}
+.tabbed_features_content_left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.tabbed_features_box{
+    display: flex;
+    width: 100%;
+    gap: 16px;
+}
+.tabbed_features_content_right{
+    width: 50%;
+    max-width: 560px; 
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid; 
+}
+.tab_menu{
+    width: 100%;
+    padding: 8px 16px 0px 0px;
+    display: flex;
+    background-color: #f2f1f5;
+}
+.tab_menu_item{
+    display: flex;
+    padding: 8px 16px 8px 16px;
+    font-size: 18px;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+}
+.code{
+    display: flex;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #241F32;
+}
+.code_container{
+    width: 100%;
+    padding: 16px 24px 16px 24px;
+    position: relative;
+    line-height: 24px;
+}
+.line_container{
+    padding: 16px 0px 16px 0px;
+    position: relative;
+    left: 8px;
+    font-weight: 400;
+    font-size: 12;
+    color: #6e7681;
+    line-height: 24px;
+}
+@media (max-width:768px) {
+    .tabbed_features_text_header_1{
+        display: block;
+    }
+    .tabbed_features_content{
+        flex-wrap: wrap;
+    }
+    .tabbed_features_content_left{
+        width: 100%;
+    }
+}
+.tabbed_case_studies{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 96px 0px 96px 0px;
+}
+.tabbed_case_studies_container{
+    width: 100%;
+    max-width: 1024px;
+}
+.tabbed_case_studies_list{
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 64px;
+}
+.tabbed_case_studies_row{
+    width: 100%;
+    display: flex;
+    gap: 32px;
+}
+.tabbed_case_studies_row_item{
+    width: 50%;
+
+}
+.tabbed_case_studies_row_item_heading{
+    width: 100%;
+    margin-bottom: 48px;
+    font-weight: 600;
+    font-size: 40px;
+}
+.tabbed_case_studies_row_item_link{
+    display: inline;
+    color: #7759c2;
+}
+.tabbed_case_studies_row_item_pill{
+    display: flex;
+    width: 80%;
+    margin-top: 16px;
+    padding: 8px 24px 8px 24px;
+    background-color: #f6f3fe;
+    border: 1px solid;
+    border-radius: 90px;
+    line-height: 22px;
+    align-items: center;
+}
+.tabbed_case_studies_row_item_pill_bold{
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -.8px;
+    line-height: 40px;
+    margin-right: 8px;
+}
+.tabbed_case_studies_row_item_card{
+    width: 100%;
+    background-color: #f6f3fe;
+    border-radius: 8px 8px 90px 8px ;
+    position: relative;
+}
+.tabbed_case_studies_row_item_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    width: 100%;
+    padding: 48px;
+    line-height: 24px;
+}
+.tabbed_case_studies_row_item_img{
+    background: #000;
+    border-radius: 4.4px 4.4px 60px 4.4px;
+    bottom: -62px;
+    height: 154px;
+    overflow: hidden;
+    position: absolute;
+    right: -40px;
+    width: 154px;
+}
+@media (max-width:768px) {
+    .tabbed_case_studies_row{
+        flex-wrap: wrap;
+    }
+    .tabbed_case_studies_row_item{
+        width: 100%;
+    
+    }
+    
+}
+.icon{
+    width: 32px;
+    height: 32px;
+}
+.link{
+    display: inline-block;
+    word-break: break-word;
+    align-items: center;
+    transition-duration: 0.5s;
+}
+.link_icon{
+    display: inline-block;
+    margin-left: 10px;
+}
+.link:hover .link_icon{
+    transition-duration: 0.25s;
+    transform: translate(10px,0px);
 }
 .font600{
     font-weight: 600;
@@ -351,15 +730,44 @@ html{
 .size50{
     font-size: 50px;
 }
+.size64{
+    font-size: 64px;
+}
 .opacity{
     opacity: 0.5;
 }
+.black{
+    color: black !important;
+}
+.purple{
+    color: #a686f2 !important;
+}
+.background_pup{
+    background-color: #7759c2;
+    color: white;
+}
 .button{
+    display: flex;
     width: max-content;
     height: 44px;
     color: white;
     background-color: black;
     padding: 11px 16px 0px 16px;
-    margin: 10px;
     border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid black;
+}
+.button:hover{
+    color: black;
+    background-color: white;
+}
+.button2{
+    width: max-content;
+    height: max-content;
+    padding: 4px 12px 4px 12px;
+    border: 1px solid;
+    border-radius: 90px;
+}
+a{
+    text-decoration: none;
 }
