@@ -68,6 +68,7 @@ html{
         gap: 0px;
     }
     .banner_title{
+        width: 100%;
         color: #171321;
         margin: 0px;
     }
