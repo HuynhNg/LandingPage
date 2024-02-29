@@ -742,6 +742,7 @@ pre{
     overflow: scroll;
     display: flex;
     gap: 32px;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 64px;
 }
