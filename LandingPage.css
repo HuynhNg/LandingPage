@@ -96,6 +96,7 @@ html{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .taskbar_item_left{
     width: max-content;
@@ -163,10 +164,14 @@ html{
     flex-direction: column;
     align-items: center;
     padding-top: 10px ;
-    gap: 5px;
+    /* gap: 5px; */
 }
 .taskbar_icon{
     opacity: 0;
+}
+.taskbar_link{
+    display: block;
+    color:#74717a;
 }
 .navigation-dropdown:hover .navigation-dropdown__popover {
     opacity: 1;
@@ -177,6 +182,9 @@ html{
 }
 .navigation-dropdown:hover .opacity {
     opacity: 1;
+}
+.taskbar_link:hover{
+    color:#7759c2;
 }
 .taskbar_item_right{
     width: max-content;
@@ -664,7 +672,11 @@ html{
     padding: 8px 16px 0px 16px;
     display: flex;
     background-color: #f2f1f5;
+    justify-content: space-between;
     overflow: scroll;
+}
+.tab_menu::-webkit-scrollbar{
+    display: none;
 }
 .tab_menu_item{
     display: flex;
